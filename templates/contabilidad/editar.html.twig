@@ -1,0 +1,12 @@
+{% extends 'base.html.twig' %}
+
+{% block stylesheets %}
+    <link href="{{ asset('styles/tabla.css') }}" rel="stylesheet" type="text/css">
+{% endblock%}
+{% block body %}
+    <div id="main-container">
+    {{ form_start (form) }}
+    {{ form_end (form) }}
+    <a style="float: left" href="{{ path('mostrar') }}" class="button">Volver</a>
+    </div>
+{% endblock %}

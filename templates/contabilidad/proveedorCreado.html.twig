@@ -1,0 +1,11 @@
+{% extends 'base.html.twig' %}
+
+{% block stylesheets %}
+    <link href="{{ asset('styles/tabla.css') }}" rel="stylesheet" type="text/css">
+{% endblock%}
+{% block body %}
+    <div id="main-container">
+        <h1> Se ha creado el Proveedor : {{ nombre }}</h1>
+        <a style="float: left" href="{{ path('inicio') }}" class="button">Volver</a>
+    </div>
+{% endblock %}

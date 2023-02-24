@@ -1,0 +1,20 @@
+{% extends 'base.html.twig' %}
+
+
+{% block body %}
+    <link rel="stylesheet" href="styles/tabla.css">
+    <div id="main-container">
+        <table style="text-align: center">
+        <thead>
+            <tr>
+                <th><h1>Menu de selección</h1></th>
+            </tr>
+        </thead>
+        <tbody>
+        <td><a href="{{ path('crear') }}" style="width: 200px" class="button">Creación de Proveedor</a></td></tr>
+        <tr><td><a href="{{ path('mostrar') }}" style="width: 200px" class="button">Consultar y Modificar</a></td></tr>
+        </tbody>
+        </table>
+    </div>
+{% endblock %}
+

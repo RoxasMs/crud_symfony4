@@ -1,0 +1,74 @@
+
+{% extends 'base.html.twig' %}
+
+{% block title %}Hello ContabilidadController!{% endblock %}
+
+{% block stylesheets %}
+    <link href="{{ asset('styles/tabla.css') }}" rel="stylesheet" type="text/css">
+{% endblock%}
+
+{% block body %}
+
+    <script type="text/javascript">
+        function ConfirmElimnar(){
+            var respuesta = confirm("Estas seguro que quieres ELIMINAR al usuario?")
+            if (respuesta){
+                return true;
+            }else{
+                return false;
+
+            }
+        }
+
+    </script>
+    <div id="main-container">
+        {% if proveedores is not empty  %}
+    <table>
+    <thead class= "tabla">
+        <tr>
+            <th>Id</th>
+            <th>Nombre</th>
+            <th>Email</th>
+            <th>Teléfono</th>
+            <th>Tipo</th>
+            <th>Activo</th>
+            <th style="position: center">Acción</th>
+            <th>Creación</th>
+            <th>Modificacion</th>
+        </tr>
+    </thead>
+    <tbody>
+
+        {% for proveedor in proveedores %}
+        <tr>
+        <td>{{ proveedor.getId() }}</td>
+        <td>{{ proveedor.getNombre() }}</td>
+        <td>{{ proveedor.getEmail() }}</td>
+        <td>{{ proveedor.getTelefono() }}</td>
+        <td>{{ proveedor.getCategoria().getNombre() }}</td>
+            {% if proveedor.getActivo() %}
+                <td>Si</td>
+            {% else %}
+                <td>No</td>
+            {% endif %}
+        <td>
+        <a href="{{ path('editar',{'id':proveedor.getId()}) }}" class="button" >Modificar</a>
+        <a href="{{ path('eliminar',{'id':proveedor.getId()}) }}" class="button" onclick="return ConfirmElimnar()">Eliminar</a>
+        </td>
+        <td>{{ proveedor.getCreado() }}</td>
+        <td>{{ proveedor.getModificado() }}</td>
+        </tr>
+
+        {% else %}
+        <p>No se han encontrado datos</p>
+        {% endfor %}
+    </tbody>
+
+    </table>
+        {% else %}
+        <h1> NO HAY DATOS EN EL SISTEMA</h1>
+        {% endif %}
+        <a style="float: right " href="{{ path('inicio') }}" class="button">Volver al menu</a>
+    </div>
+
+{% endblock %}

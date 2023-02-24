@@ -1,0 +1,42 @@
+body{
+    background-color: #9DC08B;
+    font-family: Arial;
+}
+#main-container{
+    margin: 200px auto;
+    width: 600px ;
+}
+table{
+    background-color:white;
+    text-align: left;
+    width: 100%;
+    border-collapse: collapse;
+}
+th, td{
+    padding: 25px;
+}
+thead{
+    background-color: #246355;
+    border-bottom: solid 5px #0F362D;
+    color: white;
+}
+tr:nth-child(even){  /*Escojemos los hijos tr pares*/
+    background-color: #ddd;
+}
+.button {
+    background-color: #4CAF50;
+    color: white;
+    padding: 15px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    width: 100px;
+    border-width: 2px;
+    border-color: black;
+    border-style: solid;
+    border-collapse: separate;
+}
+.button:hover{
+    background-color: #58D68D;
+}
