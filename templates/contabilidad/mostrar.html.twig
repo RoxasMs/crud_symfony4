@@ -21,7 +21,7 @@
         }
 
     </script>
-    <div id="main-container">
+    <div  style="margin:250px;" id="main-container">
         {% if proveedores is not empty  %}
     <table>
     <thead class= "tabla">
@@ -32,9 +32,9 @@
             <th>Teléfono</th>
             <th>Tipo</th>
             <th>Activo</th>
-            <th style="position: center">Acción</th>
             <th>Creación</th>
             <th>Modificacion</th>
+            <th style="position: center">Acción</th>
         </tr>
     </thead>
     <tbody>
@@ -51,12 +51,12 @@
             {% else %}
                 <td>No</td>
             {% endif %}
-        <td>
-        <a href="{{ path('editar',{'id':proveedor.getId()}) }}" class="button" >Modificar</a>
-        <a href="{{ path('eliminar',{'id':proveedor.getId()}) }}" class="button" onclick="return ConfirmElimnar()">Eliminar</a>
-        </td>
         <td>{{ proveedor.getCreado() }}</td>
         <td>{{ proveedor.getModificado() }}</td>
+        <td>
+            <a href="{{ path('editar',{'id':proveedor.getId()}) }}" class="button" >Modificar</a>
+            <a href="{{ path('eliminar',{'id':proveedor.getId()}) }}" class="button" onclick="return ConfirmElimnar()">Eliminar</a>
+        </td>
         </tr>
 
         {% else %}
